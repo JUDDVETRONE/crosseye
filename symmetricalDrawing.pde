@@ -31,7 +31,7 @@ void draw()
 }
 
 void mousePressed() {
-  background(random(cat), random(cat), random(cat));
+  background(random(cat));
 }
 
 void keyPressed() {
