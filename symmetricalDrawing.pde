@@ -10,7 +10,7 @@ float cat = random(150, 205);
 
 void setup()
 {
-  size(1200,750);
+  size(1300,750);
   frameRate(17);
   background(40);
 }
@@ -21,9 +21,9 @@ void draw()
   noStroke();
   fill(random(dog), random(dog), random(dog));
   ellipse(mouseX-25, mouseY-25, 45, 35);
-  ellipse(1200-mouseX-25, mouseY-25, 45, 35);
+  ellipse(1300-mouseX-25, mouseY-25, 45, 35);
   ellipse(mouseX-25, 750-mouseY-25, 45, 35);
-  ellipse(1200-mouseX-25, 750-mouseY-25, 45, 35);
+  ellipse(1300-mouseX-25, 750-mouseY-25, 45, 35);
 
 
   filter(DILATE);
