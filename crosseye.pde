@@ -1,53 +1,49 @@
-//add crosseye code here
-size(600,300);
-//size(displayWidth,displayHeight);
+//Move cursor to draw with dots
+//The faster cursor moves the lighter the dots are
+//Click "s" key to pause drawing
+//Click "s" key again to resume drawing
+//Click Mouse/trackpad to refresh background
+
+boolean myLooping = true;
+float dog = random(200, 255);
+float cat = random(150, 205);
+
+void setup()
+{
+  size(displayWidth, displayHeight);
+  frameRate(17);
+  background(40);
+}
+void draw()
+{
+  //blendMode(LIGHTEST);
+  //blendMode(SCREEN);
+
+  noStroke();
+  fill(random(dog), random(dog), random(dog));
+  ellipse(mouseX-25, mouseY-25, 45, 35);
+  ellipse(displayWidth-mouseX-25, mouseY-25, 45, 35);
+  ellipse(mouseX-25, displayHeight-mouseY-25, 45, 35);
+  ellipse(displayWidth-mouseX-25, displayHeight-mouseY-25, 45, 35);
 
 
-//LEFT EYE
-//white of the eye
-strokeWeight(3);
-ellipse(150,150,220,105);
+  filter(DILATE);
+}
 
-//iris
-fill(190,150,0);
-ellipse(180,150,100,100);
+void mousePressed() {
+  background(random(cat), random(cat), random(cat));
+}
 
-// inner iris
-noStroke();
-fill(210,175,0);
-ellipse(185,150,70,70);
+void keyPressed() {
 
-
-//pupil
-fill(0,0,0);
-ellipse(190,150,30,30);
-
-//highlight
-fill(255,255,255);
-ellipse(160,130,15,15);
-
-
-//RIGHT EYE
-//white of the eye
-stroke(5);
-ellipse(450,150,220,105);
-
-//iris
-fill(190,150,0);
-ellipse(420,150,100,100);
-
-// inner iris
-noStroke();
-fill(210,175,0);
-ellipse(415,150,70,70);
-
-
-//pupil
-fill(0,0,0);
-ellipse(410,150,30,30);
-
-//highlight
-fill(255,255,255);
-ellipse(390,130,15,15);
-
-
+  switch(key) {
+  case 's':
+    if (myLooping) { 
+      noLoop();
+    } else { 
+      loop();
+    }
+    myLooping = !myLooping;
+    break;
+  }
+}
