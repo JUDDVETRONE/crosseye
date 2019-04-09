@@ -16,8 +16,7 @@ void setup()
 }
 void draw()
 {
-  //blendMode(LIGHTEST);
-  //blendMode(SCREEN);
+  
 
   noStroke();
   fill(random(dog), random(dog), random(dog));
@@ -28,6 +27,7 @@ void draw()
 
 
   filter(DILATE);
+  filter(GRAY);
 }
 
 void mousePressed() {
